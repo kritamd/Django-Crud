@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <meta charset="UTF-8">
+    <title>Show</title>
+</head>
+<body>
+<h1 style="text-align:center; font-family:verdana; ">User Information</h1>
+<table class="table table-dark table-striped">
+    <tr class="table-dark">
+        <th>User Id</th>
+        <th>User Name</th>
+        <th>User Email</th>
+        <th>User Password</th>
+        <th>User Delete</th>
+        <th>User Edit</th>
+    </tr>
+
+
+        {% for user in users %}
+    <tr>
+            <td>{{user.id}}</td>
+            <td>{{user.uname}}</td>
+            <td>{{user.uemail}}</td>
+            <td>{{user.upassword}}</td>
+            <td><a href="/delete/{{user.id}}" class="btn btn-danger btn-small ">Delete</a></td>
+            <td><a href="/edit/{{user.id}}" class="btn btn-success btn-small ">Edit</a></td>
+    </tr>
+        {% endfor %}
+
+
+</table>
+</body>
+</html>
